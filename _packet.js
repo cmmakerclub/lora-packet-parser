@@ -22,7 +22,7 @@ const sensorNodeParser = Parser.start()
   .int32('field2')
   .int32('field3')
   .int32('field4')
-  .string('device_name', {length: 6, stripNull: true})
+  .string('device_name', {length: 8, stripNull: true})
   .uint32('node_ms')
 
 module.exports = sensorNodeParser
