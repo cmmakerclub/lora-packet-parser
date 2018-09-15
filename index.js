@@ -1,21 +1,6 @@
 const mqtt = require('cmmc-mqtt').mqtt
 var parser = require("./_packet.js") 
 let client = mqtt.create('mqtt://cmmc:cmmc@odin.cmmc.io', ['lora/#']) 
-/*
-     DevEUI: '008F8E9F3507855F',
-     DevAddr: 'E01B6D61',
-     FPort: '15',
-     FCntUp: '87',
-     ADRbit: '1',
-     MType: '4',
-     FCntDn: '86',
-     payload_hex: 'ff00c30a0000de110000427a0100040000004e415400000000000000',
-     mic_hex: '1b6e8911',
-     Lrcid: '00000231',
-     LrrRSSI: '-55.000000',
-     LrrSNR: '8.000000',
-     SpFact: '7',
-*/
 
 client.register('on_message', (topic, payload) => {
   const json = JSON.parse(payload.toString());
